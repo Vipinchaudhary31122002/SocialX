@@ -71,9 +71,9 @@ def logout(request):
 @login_required(login_url='signin')
 def settings(request):
     user_profile = Profile.objects.get(user=request.user)
-
     # after taking input from the user saving the changed data in the database
     if request.method == 'POST':
+        # if the user has upload profile images
         if request.FILES.get('image') == None:
             image = user_profile.profileimg
             bio = request.POST['bio']
@@ -83,7 +83,7 @@ def settings(request):
             user_profile.bio = bio
             user_profile.location = location
             user_profile.save()
-        
+        # when the user have not upload the profile images
         if request.FILES.get('image') != None:
             image = request.FILES.get('image')
             bio = request.POST['bio']
@@ -94,5 +94,4 @@ def settings(request):
             user_profile.location = location
             user_profile.save()
         return redirect('settings')
-
     return render(request, 'setting.html', {'user_profile': user_profile})

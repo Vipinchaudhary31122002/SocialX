@@ -10,9 +10,10 @@
       rel="icon"
       type="image/png"
     />
-    <title>Settings</title>
+    <title>SocialX | Settings</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Coustom links -->
     <link rel="stylesheet" href="{% static 'assets/css/icons.css' %}" />
     <link rel="stylesheet" href="{% static 'assets/css/uikit.css' %}" />
     <link rel="stylesheet" href="{% static 'assets/css/style.css' %}" />
@@ -21,10 +22,12 @@
 
   <body>
     <div class="container m-auto">
+      <!-- main heading of the page -->
       <h1 class="text-2xl leading-none text-gray-900 tracking-tight">
         <a href="/">Home</a>
         | Account Setting for <b>{{user.username }}</b>
       </h1>
+      <!-- div which contains the form -->
       <div class="grid lg:grid-cols-3 mt-2 gap-3">
         <div class="bg-black rounded-md lg:shadow-lg shadow col-span-2">
           <!-- form for taking input -->
@@ -34,7 +37,11 @@
               <!-- div for image input -->
               <div>
                 <label for="profileimage"> Select your Profile image</label>
-                <img src="{{user_profile.profileimg.url}}" width="200px" height="200px" />
+                <img
+                  src="{{user_profile.profileimg.url}}"
+                  width="200px"
+                  height="200px"
+                />
                 <input type="file" name="profileimage" value="" />
               </div>
               <!-- div for textarea fot taking bio -->
@@ -58,6 +65,7 @@
                 />
               </div>
             </div>
+            <!-- div for submit button -->
             <div class="bg-gray-10 p-6 pt-0 flex justify-end space-x-3">
               <button type="submit" class="button bg-blue-700">Save</button>
             </div>

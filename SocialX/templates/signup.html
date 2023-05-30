@@ -20,8 +20,8 @@
   </head>
 
   <body class="bg-gray-100">
+    <!-- div containing the main heading of the page -->
     <div id="wrapper" class="flex flex-col justify-between h-screen">
-      <!-- header-->
       <div class="bg-white py-2 shadow dark:bg-gray-800">
         <div class="max-w-6xl mx-auto">
           <div class="flex items-center lg:justify-between justify-around">
@@ -41,9 +41,7 @@
           </div>
         </div>
       </div>
-
-      <!-- Content-->
-
+      <!-- div containing form for signup -->
       <div>
         <div
           class="lg:p-12 max-w-md max-w-xl lg:my-0 my-12 mx-auto p-3 space-y-"
@@ -51,16 +49,18 @@
           <h1 class="lg:text-3xl text-xl font-semibold mb-2">Sign up</h1>
           <div>
             <style>
-                h5{
-                    color: red;
-                }
+              h5 {
+                color: red;
+              }
             </style>
             {% for message in messages %}
             <h5>{{message}}</h5>
             {% endfor%}
           </div>
+          <!-- signup form -->
           <form action="" , method="POST">
             {% csrf_token %}
+            <!-- field for usernam -->
             <input
               type="text"
               name="username"
@@ -68,6 +68,7 @@
               class="bg-gray-200 mb-2 shadow-none dark:bg-gray-800"
               style="border: 1px solid #d3d5d8 !important"
             />
+            <!-- field for emailid -->
             <input
               type="email"
               name="email"
@@ -75,6 +76,7 @@
               class="bg-gray-200 mb-2 shadow-none dark:bg-gray-800"
               style="border: 1px solid #d3d5d8 !important"
             />
+            <!-- field for password -->
             <input
               type="password"
               name="password1"
@@ -82,6 +84,7 @@
               class="bg-gray-200 mb-2 shadow-none dark:bg-gray-800"
               style="border: 1px solid #d3d5d8 !important"
             />
+            <!-- field for checking the previous password -->
             <input
               type="password"
               name="password2"
@@ -89,7 +92,7 @@
               class="bg-gray-200 mb-2 shadow-none dark:bg-gray-800"
               style="border: 1px solid #d3d5d8 !important"
             />
-            {% comment %}
+            <!-- {% comment %}
             <div class="flex justify-start my-4 space-x-1">
               <div class="checkbox">
                 <input type="checkbox" id="chekcbox1" checked />
@@ -99,13 +102,15 @@
               </div>
               <a href="#"> Terms and Conditions</a>
             </div>
-            {% endcomment %}
+            {% endcomment %} -->
+            <!-- signup button -->
             <button
               type="submit"
               class="bg-gradient-to-br from-pink-500 py-3 rounded-md text-white text-xl to-red-400 w-full"
             >
               Sign up
             </button>
+            <!-- link for signin page -->
             <div class="text-center mt-5 space-x-2">
               <p class="text-base">
                 Do you have an account? <a href="/signin"> Sign in </a>
@@ -117,7 +122,7 @@
 
       <!-- Footer -->
 
-      {% comment %}
+      <!-- {% comment %}
       <div class="lg:mb-5 py-3 uk-link-reset">
         <div
           class="flex flex-col items-center justify-between lg:flex-row max-w-6xl mx-auto lg:space-y-0 space-y-3"
@@ -131,7 +136,7 @@
           <p class="capitalize">© copyright 2020 by socol</p>
         </div>
       </div>
-      {% endcomment %}
+      {% endcomment %} -->
     </div>
 
     <!--<script>

@@ -21,7 +21,7 @@
 
   <body class="bg-gray-100">
     <div id="wrapper" class="flex flex-col justify-between h-screen">
-      <!-- header-->
+      <!-- header of the page-->
       <div class="bg-white py-2 shadow dark:bg-gray-800">
         <div class="max-w-6xl mx-auto">
           <div class="flex items-center lg:justify-between justify-around">
@@ -42,6 +42,7 @@
         </div>
       </div>
 
+      <!-- div which contains the signin form -->
       <!-- Content-->
       <div>
         <div
@@ -58,8 +59,10 @@
             <h5>{{message}}</h5>
             {% endfor%}
           </div>
+          <!-- form -->
           <form action="", method="POST">
             {% csrf_token %}
+            <!-- field for taking the username -->
             <input
               type="text"
               name="username"
@@ -67,6 +70,7 @@
               class="bg-gray-200 mb-2 shadow-none dark:bg-gray-800"
               style="border: 1px solid #d3d5d8 !important"
             />
+            <!-- field for password -->
             <input
               type="password"
               name="password"
@@ -83,12 +87,14 @@
               </div>
               <a href="#"> Forgot Your Password? </a>
             </div> -->
+            <!-- button for submit -->
             <button
               type="submit"
               class="bg-gradient-to-br from-pink-500 py-3 rounded-md text-white text-xl to-red-400 w-full"
             >
               Login
             </button>
+            <!-- div which contains the link for the signup page the user have not created account -->
             <div class="text-center mt-5 space-x-2">
               <p class="text-base">
                 Not registered?
