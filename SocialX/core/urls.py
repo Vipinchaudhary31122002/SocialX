@@ -11,5 +11,7 @@ urlpatterns = [
     # url when user clicks on the logout page
     path('logout', views.logout, name='logout'),
     # url for settings page
-    path('settings', views.settings, name='settings')
+    path('settings', views.settings, name='settings'),
+    # url for uploading post
+    path('upload', views.upload, name='upload')
 ]
