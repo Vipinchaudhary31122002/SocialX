@@ -25,43 +25,45 @@
         <a href="/">Home</a>
         | Account Setting for <b>{{user.username }}</b>
       </h1>
-      <hr>
       <div class="grid lg:grid-cols-3 mt-2 gap-3">
         <div class="bg-black rounded-md lg:shadow-lg shadow col-span-2">
-            <form action="">
-                <div class="grid grid-cols-1 gap-2 lg:p-4 p-1">
-                    <div>
-                      <label for="profileimage"> Select your Profile image</label>
-                      <input
-                        type="file"
-                        name="profileimage"
-                      />
-                    </div>
-                    <div class="col-span-2">
-                      <textarea
-                        id="Bio"
-                        name="Bio"
-                        rows="3"
-                        placeholder="Enter your bio here"
-                      ></textarea>
-                    </div>
-                    <div class="col-span-2">
-                      <input
-                        name="location"
-                        type="text"
-                        placeholder="Enter your location"
-                      />
-                    </div>
-                  </div>
-        
-                  <div class="bg-gray-10 p-6 pt-0 flex justify-end space-x-3">
-                    <button class="p-2 px-4 rounded bg-gray-50 text-red-500">
-                      Cancel
-                    </button>
-                    <button type="button" class="button bg-blue-700">Save</button>
-                  </div>
-            </form>
+          <!-- form for taking input -->
+          <form action="" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="grid grid-cols-1 gap-2 lg:p-4 p-1">
+              <!-- div for image input -->
+              <div>
+                <label for="profileimage"> Select your Profile image</label>
+                <img src="{{user_profile.profileimg.url}}" width="200px" height="200px" />
+                <input type="file" name="profileimage" value="" />
+              </div>
+              <!-- div for textarea fot taking bio -->
+              <div class="col-span-2">
+                <textarea
+                  id="about"
+                  name="bio"
+                  rows="3"
+                  placeholder="Enter your bio here"
+                >
+{{user_profile.bio}}</textarea
+                >
+              </div>
+              <!-- div for input which takes location for user -->
+              <div class="col-span-2">
+                <input
+                  value="{{user_profile.location}}"
+                  name="location"
+                  type="text"
+                  placeholder="Enter your location"
+                />
+              </div>
+            </div>
+            <div class="bg-gray-10 p-6 pt-0 flex justify-end space-x-3">
+              <button type="submit" class="button bg-blue-700">Save</button>
+            </div>
+          </form>
         </div>
+      </div>
     </div>
 
     <!-- Scripts
@@ -71,7 +73,6 @@
     <script src="{% static 'assets/js/uikit.js' %}"></script>
     <script src="{% static 'assets/js/simplebar.js' %}"></script>
     <script src="{% static 'assets/js/custom.js' %}"></script>
-
     <script src="{% static '../../unpkg.com/ionicons%405.2.3/dist/ionicons.js' %}"></script>
   </body>
 </html>
