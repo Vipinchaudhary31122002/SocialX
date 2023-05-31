@@ -13,5 +13,7 @@ urlpatterns = [
     # url for settings page
     path('settings', views.settings, name='settings'),
     # url for uploading post
-    path('upload', views.upload, name='upload')
+    path('upload', views.upload, name='upload'),
+    # url when the user like the post
+    path('like-post', views.like_post, name='like-post')
 ]

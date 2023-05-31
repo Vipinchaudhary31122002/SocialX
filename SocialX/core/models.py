@@ -26,3 +26,11 @@ class Post(models.Model):
 
     def _str_(self):
         return self.user
+
+# model which store data of which post is liked by user
+class LikePost(models.Model):
+    post_id = models.CharField(max_length=100)
+    username = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.username

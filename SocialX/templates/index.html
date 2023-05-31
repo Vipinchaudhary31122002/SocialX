@@ -27,6 +27,7 @@
               font-weight: bolder;
               font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial,
                 sans-serif;
+              color: black;
             "
           >
             welcome {{user_profile.user}}
@@ -221,7 +222,7 @@
                   </div>
                 </a>
                 <span class="block capitalize font-semibold">
-                  <a href="#"> @{{post.user}} </a>
+                  <a href="#" style="color: black"> @{{post.user}} </a>
                 </span>
               </div>
               <!-- setting in posts -->
@@ -235,7 +236,7 @@
                   class="bg-white w-56 shadow-md mx-auto p-2 mt-12 rounded-md text-gray-500 hidden text-base border border-gray-100"
                   uk-drop="mode: hover;pos: top-right"
                 >
-                  <ul>      
+                  <ul>
                     <li>
                       <a
                         href="#"
@@ -257,7 +258,10 @@
 
             <div>
               <div class="flex space-x-4 lg:font-bold">
-                <a href="#" class="flex items-center space-x-2">
+                <a
+                  href="/like-post?post_id={{post.id}}"
+                  class="flex items-center space-x-2"
+                >
                   <div class="p-2 rounded-full text-black">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -272,78 +276,26 @@
                       />
                     </svg>
                   </div>
-                  <p style="font-weight: bolder; font-size: large">
-                    {{post.caption}}
-                  </p>
                 </a>
+                <span
+                style="font-weight: bolder; font-size: large; color: black"
+                class="flex items-center"
+                >
+                {% if post.no_of_likes == 0 %}
+                NO likes
+                {% elif post.no_of_likes == 1 %}
+                Liked by 1 person
+                {% else %}
+                Liked by {{post.no_of_likes}} people
+                {% endif %}
+                  </span>
+                <p
+                  style="font-weight: bolder; font-size: large; color: black"
+                  class="flex items-center space-x-2"
+                >
+                  {{post.caption}}
+                </p>
               </div>
-              <!-- <div class="flex items-center space-x-3">
-                <div class="flex items-center">
-                  <img
-                    src="{% static 'assets/images/avatars/avatar-1.jpg' %}"
-                    alt=""
-                    class="w-6 h-6 rounded-full border-2 border-white"
-                  />
-                  <img
-                    src="{% static 'assets/images/avatars/avatar-4.jpg' %}"
-                    alt=""
-                    class="w-6 h-6 rounded-full border-2 border-white -ml-2"
-                  />
-                  <img
-                    src="{% static 'assets/images/avatars/avatar-2.jpg' %}"
-                    alt=""
-                    class="w-6 h-6 rounded-full border-2 border-white -ml-2"
-                  />
-                </div>
-                <div class="">
-                  Liked <strong> taiye</strong> and
-                  <strong> 209 Others </strong>
-                </div>
-              </div> -->
-
-              <!-- <div class="border-t pt-4 space-y-4">
-                <div class="flex">
-                  <div class="w-10 h-10 rounded-full relative flex-shrink-0">
-                    <img
-                      src="{% static 'assets/images/avatars/avatar-1.jpg' %}"
-                      alt=""
-                      class="absolute h-full rounded-full w-full"
-                    />
-                  </div>
-                  <div
-                    class="text-gray-700 py-2 px-3 rounded-md bg-gray-100 h-full relative lg:ml-5 ml-2 lg:mr-20"
-                  >
-                    <p class="leading-6">
-                      Y'all like billie eillish?
-                      <urna class="i uil-heart"></urna>
-                      <i class="uil-grin-tongue-wink"> </i>
-                    </p>
-                    <div
-                      class="absolute w-3 h-3 top-3 -left-1 bg-gray-100 transform rotate-45"
-                    ></div>
-                  </div>
-                </div>
-                <div class="flex">
-                  <div class="w-10 h-10 rounded-full relative flex-shrink-0">
-                    <img
-                      src="{% static 'assets/images/avatars/avatar-1.jpg' %}"
-                      alt=""
-                      class="absolute h-full rounded-full w-full"
-                    />
-                  </div>
-                  <div
-                    class="text-gray-700 py-2 px-3 rounded-md bg-gray-100 h-full relative lg:ml-5 ml-2 lg:mr-20"
-                  >
-                    <p class="leading-6">
-                      She's my favourite
-                      <i class="uil-grin-tongue-wink-alt"></i>
-                    </p>
-                    <div
-                      class="absolute w-3 h-3 top-3 -left-1 bg-gray-100 transform rotate-45"
-                    ></div>
-                  </div>
-                </div>
-              </div> -->
 
               <div
                 class="bg-gray-100 bg-gray-100 rounded-full rounded-md relative"
