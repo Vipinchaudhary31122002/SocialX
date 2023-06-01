@@ -78,16 +78,6 @@
               class="bg-gray-200 mb-2 shadow-none dark:bg-gray-800"
               style="border: 1px solid #d3d5d8 !important"
             />
-            <!-- <div class="flex justify-between my-4">
-              <div class="checkbox">
-                <input type="checkbox" id="chekcbox1" checked />
-                <label for="chekcbox1"
-                  ><span class="checkbox-icon"></span>Remember Me</label
-                >
-              </div>
-              <a href="#"> Forgot Your Password? </a>
-            </div> -->
-            <!-- button for submit -->
             <button
               type="submit"
               class="bg-gradient-to-br from-pink-500 py-3 rounded-md text-white text-xl to-red-400 w-full"
@@ -104,63 +94,9 @@
           </form>
         </div>
       </div>
-
-      <!-- Footer -->
-
-      <!-- <div class="lg:mb-5 py-3 uk-link-reset">
-        <div
-          class="flex flex-col items-center justify-between lg:flex-row max-w-6xl mx-auto lg:space-y-0 space-y-3"
-        >
-          <div class="flex space-x-2 text-gray-700 uppercase">
-            <a href="#"> About</a>
-            <a href="#"> Help</a>
-            <a href="#"> Terms</a>
-            <a href="#"> Privacy</a>
-          </div>
-          <p class="capitalize">© copyright 2020 by socol</p>
-        </div>
-      </div> -->
     </div>
 
-    <!--<script>
-        
-        (function (window, document, undefined) {
-            'use strict';
-            if (!('localStorage' in window)) return;
-            var nightMode = localStorage.getItem('gmtNightMode');
-            if (nightMode) {
-                document.documentElement.className += ' dark';
-            }
-        })(window, document);
-    
-    
-        (function (window, document, undefined) {
-    
-            'use strict';
-    
-            // Feature test
-            if (!('localStorage' in window)) return;
-    
-            // Get our newly insert toggle
-            var nightMode = document.querySelector('#night-mode');
-            if (!nightMode) return;
-    
-            // When clicked, toggle night mode on or off
-            nightMode.addEventListener('click', function (event) {
-                event.preventDefault();
-                document.documentElement.classList.toggle('dark');
-                if (document.documentElement.classList.contains('dark')) {
-                    localStorage.setItem('gmtNightMode', true);
-                    return;
-                }
-                localStorage.removeItem('gmtNightMode');
-            }, false);
-    
-        })(window, document);
-    </script>-->
-
-    <!-- Scripts
-    ================================================== -->
+    <!-- Scripts -->
     <script src="{% static 'assets/js/tippy.all.min.js' %}"></script>
     <script src="{% static 'assets/js/jquery-3.3.1.min.js' %}"></script>
     <script src="{% static 'assets/js/uikit.js' %}"></script>
