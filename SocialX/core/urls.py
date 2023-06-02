@@ -17,5 +17,7 @@ urlpatterns = [
     # url when the user like the post
     path('like-post', views.like_post, name='like-post'),
     # url for the profile page of user
-    path('profile/<str:pk>', views.profile, name='profile')
+    path('profile/<str:pk>', views.profile, name='profile'),
+    # url for the follow view
+    path('follow', views.follow, name='follow')
 ]

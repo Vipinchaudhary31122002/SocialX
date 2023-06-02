@@ -34,3 +34,11 @@ class LikePost(models.Model):
 
     def __str__(self):
         return self.username
+
+# modal which store the details of user which are followed by particular user
+class FollowersCount(models.Model):
+    follower = models.CharField(max_length=100)
+    user = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.user
