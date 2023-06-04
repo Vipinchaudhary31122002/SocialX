@@ -206,7 +206,7 @@
         <!-- left sidebar-->
         <div class="space-y-5 flex-shrink-0 lg:w-7/12">
           <!-- posts-->
-          {% for post in posts reversed %}
+          {% for post in feed_list reversed %}
           <div class="bg-white shadow rounded-md -mx-2 lg:mx-0">
             <!-- post header-->
             <div class="flex justify-between items-center px-3 py-2">
@@ -222,7 +222,7 @@
                   </div>
                 </a>
                 <span class="block capitalize font-semibold">
-                  <a href="#" style="color: black"> @{{post.user}} </a>
+                  <a href="/profile/{{post.user}}" style="color: black"> @{{post.user}} </a>
                 </span>
               </div>
               <!-- setting in posts -->
